@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="osc-browser.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <style media="screen">
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .button {
+            width: 300px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            background-color: #fc0;
+        }
+        .button span {
+            font-size: 2em;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    Super interface de Noha Project
+    <button id="b1">send a socket</button>
+
+    <div id="f1" class="field">
+        <input type="number" name="" value="0">
+        <button>send a float</button>
+    </div>
+
+    <div id="b2" class="button">
+        <span>Mon bouton (2)</span>
+    </div>
+
+    <div id="b3" class="button">
+        <span>Mon bouton (3)</span>
+    </div>
+
+    <script src="front.js" charset="utf-8"></script>
+
+  </body>
+</html>
