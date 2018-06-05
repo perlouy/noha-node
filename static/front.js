@@ -1,26 +1,39 @@
 
-let oscPort = new osc.WebSocketPort({
-    url: "ws://localhost:3000", // URL to your Web Socket server.
-    metadata: true
-})
+let oscPort = null
 
-oscPort.open()
+let init = async () => {
 
-oscPort.on("message", function (oscMsg) {
-    console.log("An OSC message just arrived!", oscMsg)
-})
+    let ip = await (await fetch('ip')).text()
 
-oscPort.on("ready", function () {
-    oscPort.send({
-        address: "/carrier/frequency",
-        args: [
-            {
-                type: "f",
-                value: 440
-            }
-        ]
+    oscPort = new osc.WebSocketPort({
+        url: `ws://${ip}:3000`, // URL to your Web Socket server.
+        metadata: true
     })
-})
+
+    oscPort.open()
+
+    oscPort.on("message", function (oscMsg) {
+        console.log("An OSC message just arrived!", oscMsg)
+    })
+
+    oscPort.on('ready', function () {
+
+        console.log(`oscPort is ready (bind with ${ip}:3000)`)
+
+        oscPort.send({
+            address: "/carrier/frequency",
+            args: [
+                {
+                    type: "f",
+                    value: 440
+                }
+            ]
+        })
+    })
+
+}
+
+init()
 
 
 

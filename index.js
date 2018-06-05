@@ -2,6 +2,8 @@
 
 require('colors')
 
+let ip = require('ip')
+
 let Path = require('path')
 let express = require('express')
 let osc = require('osc')
@@ -12,6 +14,12 @@ let app = express()
 app.get('/', (req, res) => {
 
     res.sendFile(Path.join(__dirname, './src/view/index.html'))
+
+})
+
+app.get('/ip', (req, res) => {
+
+    res.send(ip.address())
 
 })
 
