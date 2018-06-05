@@ -27,7 +27,7 @@ app.use(express.static('static'))
 
 let server = app.listen(3000, () => {
 
-    console.log(`the app run on localhost:3000`.green)
+    console.log(`the app run on ${ip.address().red}:3000`.green)
 
 })
 
