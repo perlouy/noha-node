@@ -102,7 +102,7 @@ let onButton = event => {
 
 }
 
-for (let div of document.querySelectorAll('.button')) {
+for (let div of document.querySelectorAll('.scene')) {
 
     let value = div.dataset.index
 
