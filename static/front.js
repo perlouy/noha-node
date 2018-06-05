@@ -71,20 +71,41 @@ document.querySelector('#f1 button').onclick = () => {
 
 
 
-document.querySelector('#b2').onclick = event => {
+// document.querySelector('#b2').onclick = event => {
+//
+//     oscPort.send({
+//         address: '/main',
+//         args: [{ type: 'f', value: 2 }],
+//     })
+//
+// }
+//
+// document.querySelector('#b3').onclick = event => {
+//
+//     oscPort.send({
+//         address: '/main',
+//         args: [{ type: 'f', value: 3 }],
+//     })
+//
+// }
+
+let onButton = event => {
+
+    let div = event.currentTarget
+
+    let value = parseFloat(div.dataset.index)
 
     oscPort.send({
         address: '/main',
-        args: [{ type: 'f', value: 2 }],
+        args: [{ type: 'f', value }],
     })
 
 }
 
-document.querySelector('#b3').onclick = event => {
+for (let div of document.querySelectorAll('.button')) {
 
-    oscPort.send({
-        address: '/main',
-        args: [{ type: 'f', value: 3 }],
-    })
+    let value = div.dataset.index
+
+    div.onclick = onButton
 
 }
