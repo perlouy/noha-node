@@ -70,42 +70,59 @@ document.querySelector('#f1 button').onclick = () => {
 
 
 
-
-// document.querySelector('#b2').onclick = event => {
-//
-//     oscPort.send({
-//         address: '/main',
-//         args: [{ type: 'f', value: 2 }],
-//     })
-//
-// }
-//
-// document.querySelector('#b3').onclick = event => {
-//
-//     oscPort.send({
-//         address: '/main',
-//         args: [{ type: 'f', value: 3 }],
-//     })
-//
-// }
-
-let onButton = event => {
-
-    let div = event.currentTarget
-
-    let value = parseFloat(div.dataset.index)
+document.querySelector('#b1').onclick = event => {
 
     oscPort.send({
         address: '/main',
-        args: [{ type: 'f', value }],
+        args: [{ type: 'f', value: 1 }],
     })
 
 }
 
-for (let div of document.querySelectorAll('.scene')) {
+ document.querySelector('#b2').onclick = event => {
 
-    let value = div.dataset.index
+     oscPort.send({
+         address: '/main',
+         args: [{ type: 'f', value: 2 }],
+     })
 
-    div.onclick = onButton
+ }
 
-}
+ document.querySelector('#b3').onclick = event => {
+
+     oscPort.send({
+         address: '/main',
+         args: [{ type: 'f', value: 3 }],
+     })
+
+ }
+
+ document.querySelector('#b4').onclick = event => {
+
+     oscPort.send({
+         address: '/main',
+         args: [{ type: 'f', value: 4 }],
+     })
+
+ }
+
+// let onButton = event => {
+//
+//     let div = event.currentTarget
+//
+//     let value = parseFloat(div.dataset.index)
+//
+//     oscPort.send({
+//         address: '/scene',
+//         args: [{ type: 'f', value }],
+//     })
+//
+// }
+//
+// for (let div of document.querySelectorAll('.scene')) {
+//
+//     let value = div.dataset.index
+//
+//     div.onclick = onButton
+//
+// }
