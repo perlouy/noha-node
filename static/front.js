@@ -70,7 +70,7 @@ document.querySelector('#f1 button').onclick = () => {
 
 
 
-document.querySelector('#b9').onclick = event => {
+document.querySelector('#b1').onclick = event => {
 
     oscPort.send({
         address: '/main',
