@@ -77,7 +77,7 @@ document.querySelector('#b1').onclick = event => {
 
      oscPort.send({
          address: '/audio',
-         args: [{ type: 'f', value: 1 }],
+         args: [{ type: 'f', value: 0 }],
      })
 
  }
@@ -86,7 +86,7 @@ document.querySelector('#b1').onclick = event => {
 
       oscPort.send({
           address: '/audio',
-          args: [{ type: 'f', value: 2 }],
+          args: [{ type: 'f', value: 1 }],
       })
 
   }
@@ -95,7 +95,7 @@ document.querySelector('#b1').onclick = event => {
 
       oscPort.send({
           address: '/audio',
-          args: [{ type: 'f', value: 3 }],
+          args: [{ type: 'f', value: 2 }],
       })
 
   }
@@ -104,7 +104,7 @@ document.querySelector('#b1').onclick = event => {
 
       oscPort.send({
           address: '/audio',
-          args: [{ type: 'f', value: 4 }],
+          args: [{ type: 'f', value: 3 }],
       })
 
   }
