@@ -37,40 +37,6 @@ init()
 
 
 
-
-
-
-document.querySelector('#b1').onclick = () => {
-
-    oscPort.send({
-        address: "/carrier/frequency",
-        args: [
-            {
-                type: "f",
-                value: Math.random(),
-            }
-        ]
-    })
-
-}
-
-
-document.querySelector('#f1 button').onclick = () => {
-
-    let value = parseFloat(document.querySelector('#f1 input').value)
-
-    oscPort.send({
-        address: '/main',
-        args: [{ type: 'f', value }],
-    })
-
-}
-
-
-
-
-
-
 document.querySelector('#b1').onclick = event => {
 
     oscPort.send({
