@@ -5,77 +5,145 @@
     <title></title>
     <script src="osc-browser.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <style media="screen">
 
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            width: 100%;
+            background-color: black;
+        }
+        img{
+            width:20%;
+            margin: auto;
+            display: block;
+            margin-top: 1%;
+            margin-bottom: 2%
+        }
+        p{
+            width: 100%;
+            margin-top: 5%;
+            padding-bottom: 1em;
+            text-align: center;
         }
 
+        #saisons{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        #musics{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
         .scene {
-            width: 300px;
-            height: 100px;
+            width: 10em;
+            margin: 1% 2% 2% 1%;
+            height: 5em;
             display: flex;
             justify-content: center;
             align-items: center;
             user-select: none;
             cursor: pointer;
-            background-color: #fc0;
+            padding: 1em 0 1em 0;
+            border-radius: 25px;
+            border: 1px solid white;
+            padding: 1em;
+            text-align: center;
+
         }
         .scene span {
-            font-size: 2em;
+            font-size: 1em;
         }
 
         .audio {
-            width: 300px;
-            height: 100px;
+            width: 10em;
+            height: 5em;
+            margin: 1% 2% 2% 1%;
             display: flex;
             justify-content: center;
             align-items: center;
             user-select: none;
             cursor: pointer;
-            background-color: #0cf;
+            padding: 1em 0 1em 0;
+            border-radius: 25px;
+            border: 1px solid white;
+            padding: 1em;
+            text-align: center;
         }
         .audio span {
-            font-size: 2em;
+            font-size: 1em;
         }
+        @media(min-width: 768px) and (max-width: 1388px){
+            #saisons{
+                width: 60%;
+            }
+            #musics{
+                width: 60%;
+            }
+        }
+        @media(min-width: 1px) and (max-width: 425px){
+            #saisons{
+                width: 10%;
+            }
+            #musics{
+                width: 10%;
+            }
+        }
+
+
 
 
     </style>
   </head>
   <body>
-    Super interface de Noha Project
-    
-
-    <div class="scene" data-index="1" id="b1">
-        <span>Mon bouton (1)</span>
+    <div id="logo">
+        <img src="img/noha-logo.png" alt="Logo de NOHA">
     </div>
 
-    <div class="scene" data-index="2" id="b2">
-        <span>Mon bouton (2)</span>
-    </div>
+    <div id="saisons">
+        <p>SCENES</p>
+        <div class="scene" data-index="1" id="b1">
+            <span>Printemps</span>
+        </div>
 
-    <div class="scene" data-index="3" id="b3">
-        <span>Mon bouton (3)</span>
-    </div>
+        <div class="scene" data-index="2" id="b2">
+            <span>Été</span>
+        </div>
 
-    <div class="scene" data-index="4" id="b4">
-        <span>Mon bouton (4)</span>
-    </div>
+        <div class="scene" data-index="3" id="b3">
+            <span>Automne</span>
+        </div>
 
-    <div class="audio" data-index="1" id="b5">
-        <span>Mon bouton (4)</span>
+        <div class="scene" data-index="4" id="b4">
+            <span>Hiver</span>
+        </div>
     </div>
+    <div id="musics">
+        <p>MUSIQUE</p>
+        <div class="audio" data-index="1" id="b5">
+            <span>20syl - Voices</span>
+        </div>
 
-    <div class="audio" data-index="2" id="b6">
-        <span>Mon bouton (4)</span>
-    </div>
+        <div class="audio" data-index="2" id="b6">
+            <span>Boris Brejcha - Angel in the sky</span>
+        </div>
 
-    <div class="audio" data-index="3" id="b7">
-        <span>Mon bouton (4)</span>
-    </div>
+        <div class="audio" data-index="3" id="b7">
+            <span>Brodinski - 5 Years of Bromance</span>
+        </div>
 
-    <div class="audio" data-index="4" id="b8">
-        <span>Mon bouton (4)</span>
+        <div class="audio" data-index="4" id="b8">
+            <span>Claptone - No eyes</span>
+        </div>
     </div>
 
     <script src="front.js" charset="utf-8"></script>
